@@ -22,4 +22,5 @@ class PersonFactory extends Factory
             'edad' => $this->faker->numberBetween(1, 80),
         ];
     }
+
 }
