@@ -1,7 +1,9 @@
 @extends('layouts.plantilla')
-
-@section('title', 'Curso ' . $curso)
+{{-- ! Paso #2 --}}
+@section('title', 'Curso ' . $curso->id)
 
 @section('content')
-    <h1>Binvenido al curso de: {{$curso}}</h1>
+    {{-- ! Paso #2 --}}
+    <h1>Binvenido al curso de: {{$curso->nombre}}</h1>
+    <button><a href="{{route('house')}}">Go Back</a></button>
 @endsection

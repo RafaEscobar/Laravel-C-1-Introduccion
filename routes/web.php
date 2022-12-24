@@ -14,12 +14,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('cursos', HomeController::class);
+Route::get('cursos', HomeController::class)->name('house');
 
 Route::controller(CursoController::class)->group(function () {
-    Route::get('cursos/web', 'web');
-    Route::get('cursos/{curso}', 'oneCourse');
-    Route::get('cursos/{curso}/{categoria}', 'oneCT');
+    Route::get('cursos/web', 'web')->name('cursos.web');
+    Route::get('cursos/{id}', 'oneCourse')->name('cursos.id');
+    Route::get('cursos/{curso}/{categoria}', 'oneCT')->name('cursos.curso.categoria');  
 });
 
 // Route::get('cursos/{nomCurso}/{categoria?}', function ($nomCurso, $categoria=null) {
