@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function __invoke(){
-        $cursos = Curso::paginate();
+        $cursos = Curso::orderby('id', 'desc')->paginate();
 
         return view('HomeCourse', compact('cursos'));
     }

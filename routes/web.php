@@ -14,12 +14,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Usado
 Route::get('cursos', HomeController::class)->name('house');
 
 Route::controller(CursoController::class)->group(function () {
+    // Libre...
     Route::get('cursos/web', 'web')->name('cursos.web');
+
+    Route::post('cursos/curso', 'store')->name('curso.store');
+
+    // Usado -muestra el curso seleccionado-
+    Route::get('cursos/crear', 'oneCT')->name('cursos.curso.crear');
     Route::get('cursos/{id}', 'oneCourse')->name('cursos.id');
-    Route::get('cursos/{curso}/{categoria}', 'oneCT')->name('cursos.curso.categoria');  
 });
 
 // Route::get('cursos/{nomCurso}/{categoria?}', function ($nomCurso, $categoria=null) {

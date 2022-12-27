@@ -5,7 +5,7 @@
 @section('content')
     <h1>Bienvenido a la seccion de cursos!!!</h1>
 
-    <button> <a href="{{route('cursos.web')}}">Vamonoooos... </a> </button>
+    <button> <a href="{{route('cursos.curso.crear')}}">Crear curso... </a> </button>
 
     @foreach ($cursos as $fila)
     {{-- ! Paso #1 --}}
